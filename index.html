@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snehal Sandugade | Professional Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --bg: #f8f9fd;
+        }
+        body { background-color: var(--bg); font-family: 'Plus Jakarta Sans', sans-serif; color: #2b2d42; }
+        
+        /* --- Attractive Modern Navbar Styling --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(10px); /* Glass effect */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #475569 !important;
+            margin: 0 10px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* Hover Underline Animation */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .btn-contact-nav {
+            background: var(--primary);
+            color: white !important;
+            border-radius: 50px;
+            padding: 8px 25px !important;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+        }
+
+        .btn-contact-nav:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Inner Dropdown CSS */
+        .dropdown-menu li { position: relative; }
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: -7px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .dropdown-menu li:hover > .dropdown-submenu { display: block; }
+
+        /* Existing Page Styles */
+        .sidebar-card { border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.02); background: white; }
+        .glass-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 0 0 40px 40px; padding: 60px 0 100px; }
+        .main-content { margin-top: -80px; }
+        .info-card { border: none; border-radius: 15px; transition: 0.3s; background: white; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .skill-tag { background: #eef2ff; color: var(--primary); padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: 600; display: inline-block; margin-bottom: 5px; }
+        .timeline-item { border-left: 2px dashed #cbd5e1; padding-left: 20px; position: relative; margin-bottom: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; }
+        .icon-circle { width: 40px; height: 40px; background: #f0f4ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+
+        .accordion-button:not(.collapsed) { background-color: #f0f4ff; color: var(--primary); }
+        .accordion-button:focus { box-shadow: none; }
+        .accordion-item { border: none; margin-bottom: 5px; }
+        .accordion-button { border-radius: 12px !important; font-size: 14px; font-weight: 600; padding: 12px; }
+
+        .form-control { border-radius: 10px; border: 1px solid #e2e8f0; padding: 12px; }
+        .btn-submit { background: var(--primary); color: white; border-radius: 10px; padding: 12px 30px; border: none; font-weight: 600; width: 100%; transition: 0.3s; }
+        .btn-submit:hover { background: var(--secondary); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="fas fa-code me-2"></i>Snehal.
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                    <ul class="dropdown-menu border-0 shadow-lg p-3">
+                        <li><a class="dropdown-item rounded mb-1" href="#"><i class="fas fa-laptop-code me-2 text-primary"></i>Web Development</a></li>
+                        <li>
+                            <a class="dropdown-item rounded d-flex justify-content-between align-items-center mb-1" href="#">
+                                <span><i class="fas fa-palette me-2 text-info"></i>Design</span> <i class="fas fa-chevron-right ms-3 small"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-submenu border-0 shadow-lg p-2">
+                                <li><a class="dropdown-item rounded" href="#">Graphic Design</a></li>
+                                <li><a class="dropdown-item rounded" href="#">UI/UX Design</a></li>
+                            </ul>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item rounded" href="#"><i class="fas fa-keyboard me-2 text-success"></i>Data Entry</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-contact-nav ms-lg-3 mt-2 mt-lg-0" href="#contactForm">Hire Me</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="glass-header text-center">
+    <div class="container">
+        <h1 class="fw-bold">Snehal Sandugade</h1>
+        <p class="opacity-75"><i class="fab fa-linkedin me-1"></i> linkedin.com/in/snehal-Sandugade-883649388</p>
+    </div>
+</div>
+
+<div class="container main-content pb-5">
+    <div class="row g-4">
+        <div class="col-lg-4">
+            <div class="sidebar-card card p-4 mb-4">
+                <div class="text-center">
+                    <img src="data:image/jpeg;base64,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" class="rounded-circle border border-4 border-white shadow-sm mb-3" alt="Snehal">
+                    <h5 class="fw-bold">BCA Final Year</h5>
+                    <p class="text-muted small">Kamala College, Kolhapur</p>
+                </div>
+                <hr>
+                <div class="personal-info small">
+                    <div class="d-flex mb-3 align-items-center">
+                        <div class="icon-circle me-3"><i class="fas fa-envelope"></i></div>
+                        <div><p class="mb-0 text-muted">Email</p><b>sandugadesnehal@gmail.com</b></div>
+                    </div>
+                    <div class="d-flex mb-3 align-items-center">
+                        <div class="icon-circle me-3"><i class="fas fa-birthday-cake"></i></div>
+                        <div><p class="mb-0 text-muted">Birth Date</p><b>28 May 2005</b></div>
+                    </div>
+                    <div class="d-flex mb-3 align-items-center">
+                        <div class="icon-circle me-3"><i class="fas fa-language"></i></div>
+                        <div><p class="mb-0 text-muted">Languages</p><b>Marathi, Hindi, English</b></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card card p-3 mb-4">
+                <h6 class="fw-bold mb-3 px-2 text-primary">Quick Information</h6>
+                <div class="accordion accordion-flush" id="sidebarInfo">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed px-2" type="button" data-bs-toggle="collapse" data-bs-target="#certDrop">
+                                <i class="fas fa-certificate text-warning me-2"></i> Professional Certifications
+                            </button>
+                        </h2>
+                        <div id="certDrop" class="accordion-collapse collapse" data-bs-parent="#sidebarInfo">
+                            <div class="accordion-body px-2">
+                                <span class="skill-tag">MS-CIT</span>
+                                <span class="skill-tag">Advance Excel</span>
+                                <span class="skill-tag">Graphic Design</span>
+                                <span class="skill-tag">C, C++ & Python</span>
+                                <span class="skill-tag">Data Entry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed px-2" type="button" data-bs-toggle="collapse" data-bs-target="#strengthDrop">
+                                <i class="fas fa-star text-success me-2"></i> My Strengths
+                            </button>
+                        </h2>
+                        <div id="strengthDrop" class="accordion-collapse collapse" data-bs-parent="#sidebarInfo">
+                            <div class="accordion-body px-2 small">
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Quick learner</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Problem-solving mindset</li>
+                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Team player</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i>Consistent & Hardworking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed px-2" type="button" data-bs-toggle="collapse" data-bs-target="#hobbyDrop">
+                                <i class="fas fa-heart text-danger me-2"></i> Hobbies & Interests
+                            </button>
+                        </h2>
+                        <div id="hobbyDrop" class="accordion-collapse collapse" data-bs-parent="#sidebarInfo">
+                            <div class="accordion-body px-2">
+                                <span class="skill-tag"><i class="fas fa-plane me-1"></i> Traveling</span>
+                                <span class="skill-tag"><i class="fas fa-music me-1"></i> Music</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="row g-3 mb-4 text-center">
+                <div class="col-6 col-md-3"><div class="info-card p-3 shadow-sm"><h4 class="fw-bold text-primary mb-0">92%</h4><small class="text-muted">SSC</small></div></div>
+                <div class="col-6 col-md-3"><div class="info-card p-3 shadow-sm"><h4 class="fw-bold text-success mb-0">52%</h4><small class="text-muted">HSC</small></div></div>
+                <div class="col-6 col-md-3"><div class="info-card p-3 shadow-sm"><h4 class="fw-bold text-info mb-0">BCA</h4><small class="text-muted">Appearing</small></div></div>
+                <div class="col-6 col-md-3"><div class="info-card p-3 shadow-sm"><h4 class="fw-bold text-warning mb-0">2026</h4><small class="text-muted">Passing</small></div></div>
+            </div>
+
+            <div class="info-card p-4 mb-4 shadow-sm">
+                <h6 class="fw-bold mb-4"><i class="fas fa-graduation-cap me-2 text-primary"></i>Academic History</h6>
+                <div class="timeline-item">
+                    <h6 class="mb-1 fw-bold">BCA (Bachelor of Computer Applications)</h6>
+                    <p class="mb-0 small text-muted">Kamala College, Kolhapur (Shivaji University)</p>
+                    <small class="badge bg-primary-subtle text-primary">Expected March 2026</small>
+                </div>
+                <div class="timeline-item">
+                    <h6 class="mb-1 fw-bold">12th Science (HSC)</h6>
+                    <p class="mb-0 small text-muted">Maharashtra Board | 52.17%</p>
+                    <small class="text-muted">Feb 2023</small>
+                </div>
+                <div class="timeline-item border-0 pb-0">
+                    <h6 class="mb-1 fw-bold">10th (SSC)</h6>
+                    <p class="mb-0 small text-muted">Maharashtra Board | 92.40%</p>
+                    <small class="text-muted">March 2021</small>
+                </div>
+            </div>
+
+            <div class="info-card p-4 mb-4 shadow-sm">
+                <h6 class="fw-bold mb-3"><i class="fas fa-tasks me-2 text-primary"></i>Projects</h6>
+                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner p-2">
+                        <div class="carousel-item active">
+                            <div class="p-4 border rounded bg-light">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0 fw-bold">Online Quiz Application</h6>
+                                    <span class="badge bg-success">Completed</span>
+                                </div>
+                                <p class="text-muted small mb-0">Using PHP, MySQL & JavaScript. Developed a quiz system with user login, question management, and score calculation.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="p-4 border rounded bg-light">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0 fw-bold">Weather Alert System</h6>
+                                    <span class="badge bg-info text-dark">In Progress</span>
+                                </div>
+                                <p class="text-muted small mb-0">API Integration & Alert Logic. Created a weather application using PHP where users can save cities and receive weather alerts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card p-4 shadow-sm">
+                <h6 class="fw-bold mb-4"><i class="fas fa-paper-plane me-2 text-primary"></i>Contact Me</h6>
+                <form id="contactForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="email@example.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" placeholder="What is this regarding?">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn-submit shadow-sm">
+                                Send Message <i class="fas fa-chevron-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
